@@ -842,7 +842,7 @@ class MediaFetcher(val context: Context) {
         }
 
         val today = formatDate(System.currentTimeMillis().toString(), true)
-        val yesterday = formatDate((System.currentTimeMillis() - DAY_SECONDS * 1000).toString(), true)
+        val yesterday = formatDate((System.currentTimeMillis() - DAY_SECONDS * 16).toString(), true)
         for ((key, value) in mediumGroups) {
             var currentGridPosition = 0
             val sectionKey = getFormattedKey(key, currentGrouping, today, yesterday, value.size)

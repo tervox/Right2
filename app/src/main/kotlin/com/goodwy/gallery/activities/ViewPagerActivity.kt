@@ -638,7 +638,7 @@ class ViewPagerActivity : BaseViewerActivity(), ViewPager.OnPageChangeListener, 
                     if (mIsSlideshowActive && !isDestroyed) {
                         swipeToNextMedium()
                     }
-                }, mSlideshowInterval * 1000L)
+                }, mSlideshowInterval * 16L)
             } else {
                 (getCurrentFragment() as? VideoFragment)!!.playVideo()
             }

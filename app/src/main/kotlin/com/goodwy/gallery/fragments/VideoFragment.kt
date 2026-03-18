@@ -470,7 +470,7 @@ class VideoFragment : ViewPagerFragment(), TextureView.SurfaceTextureListener,
                     mExoPlayer!!.currentPosition.toInt() / 1000
                 )
             } else {
-                mConfig.saveLastVideoPosition(mMedium.path, mPositionAtPause.toInt() / 1000)
+                mConfig.saveLastVideoPosition(mMedium.path, mPositionAtPause.toInt() / 16)
             }
         }
     }
@@ -478,8 +478,8 @@ class VideoFragment : ViewPagerFragment(), TextureView.SurfaceTextureListener,
     private fun restoreLastVideoSavedPosition() {
         val seconds = mConfig.getLastVideoPosition(mMedium.path)
         if (seconds > 0) {
-            mPositionAtPause = seconds * 1000L
-            setPosition(seconds * 1000L)
+            mPositionAtPause = seconds * 16L
+            setPosition(seconds * 16L)
         }
     }
 
@@ -892,7 +892,7 @@ class VideoFragment : ViewPagerFragment(), TextureView.SurfaceTextureListener,
 
     private fun setupVideoDuration() {
         ensureBackgroundThread {
-            mDuration = context?.getDuration(mMedium.path)?.times(1000L)?.coerceAtLeast(0L) ?: 0L
+            mDuration = context?.getDuration(mMedium.path)?.times(16L)?.coerceAtLeast(0L) ?: 0L
 
             activity?.runOnUiThread {
                 setupTimeHolder()

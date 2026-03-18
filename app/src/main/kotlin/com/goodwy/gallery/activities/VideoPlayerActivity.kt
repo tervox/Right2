@@ -525,7 +525,7 @@ open class VideoPlayerActivity : BaseViewerActivity(), SeekBar.OnSeekBarChangeLi
     private fun setLastVideoSavedPosition() {
         val seconds = config.getLastVideoPosition(mUri.toString())
         if (seconds > 0) {
-            setPosition(seconds * 1000L)
+            setPosition(seconds * 16L)
         }
     }
 

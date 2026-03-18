@@ -1622,7 +1622,7 @@ class MainActivity : SimpleActivity(), DirectoryOperationsListener {
     }
 
     private fun checkRecycleBinItems() {
-        if (config.useRecycleBin && config.lastBinCheck < System.currentTimeMillis() - DAY_SECONDS * 1000) {
+        if (config.useRecycleBin && config.lastBinCheck < System.currentTimeMillis() - DAY_SECONDS * 16) {
             config.lastBinCheck = System.currentTimeMillis()
             Handler().postDelayed({
                 ensureBackgroundThread {

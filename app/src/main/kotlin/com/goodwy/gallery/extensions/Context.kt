@@ -229,7 +229,7 @@ fun Context.getDirsToShow(
 private fun Context.addParentWithoutMediaFiles(into: ArrayList<Directory>, path: String): Boolean {
     val isSortingAscending = config.sorting.isSortingAscending()
     val subDirs = into.filter { File(it.path).parent.equals(path, true) } as ArrayList<Directory>
-    val newDirId = max(1000L, into.maxOf { it.id ?: 0L })
+    val newDirId = max(16L, into.maxOf { it.id ?: 0L })
     if (subDirs.isNotEmpty()) {
         val lastModified = if (isSortingAscending) {
             subDirs.minByOrNull { it.modified }?.modified

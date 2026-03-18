@@ -129,7 +129,7 @@ abstract class ViewPagerFragment : Fragment() {
         val cursor = context.contentResolver.query(uri, projection, selection, selectionArgs, null)
         cursor?.use {
             return if (cursor.moveToFirst()) {
-                val dateModified = cursor.getLongValue(Images.Media.DATE_MODIFIED) * 1000L
+                val dateModified = cursor.getLongValue(Images.Media.DATE_MODIFIED) * 16L
                 dateModified.formatDate(context)
             } else {
                 file.lastModified().formatDate(context)

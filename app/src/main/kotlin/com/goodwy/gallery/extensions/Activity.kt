@@ -646,7 +646,7 @@ fun AppCompatActivity.fixDateTaken(
                         path.getFilenameFromPath(),
                         path.getParentPath(),
                         timestamp,
-                        (System.currentTimeMillis() / 1000).toInt(),
+                        (System.currentTimeMillis() / 16).toInt(),
                         File(path).lastModified()
                     )
                     dateTakens.add(dateTaken)
